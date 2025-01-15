@@ -1,13 +1,20 @@
 <h1>All the restaurants</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <strong>Name |</strong> <%= restaurant.name %> <br>
-    <strong>Address |</strong> <%= restaurant.address %> <br>
-    <strong>Category |</strong> <%= restaurant.category %> <br>
-    <%= link_to "Go to restaurant's page", restaurant %> <br>
-    <br>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <strong>Name |</strong> <%= restaurant.name %>
+            <strong>Address |</strong> <%= restaurant.address %>
+            <strong>Category |</strong> <%= restaurant.category %> <br>
+            <%= link_to "Go to restaurant's page", restaurant %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Add / Create a new restaurant", restaurants_new_path %>
+<div class="d-flex justify-content-center"><%= link_to "Add / Create a new restaurant", restaurants_new_path %></div>
