@@ -7,4 +7,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # User can list all the restaurants
+  get "restaurants", to: "restaurants#index"
+  # User can add a new restaurant and redirect to the show view
+  get "restaurants/new", to: "restaurants#new"
+
+  post "restaurants", to: "restaurants#create"
+
+  # User can see the details of a restaurant
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
+
+  # User can let a review
+ 
+
 end
